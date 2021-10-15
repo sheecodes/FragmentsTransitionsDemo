@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentOne">
+    <fragment
+        android:id="@+id/fragmentOne"
+        android:name="com.sheecodes.fragmentstransitionanimationsdemo.FragmentOne"
+        android:label="Home"
+        tools:layout="@layout/fragment_one">
+        <action
+            android:id="@+id/action_fragmentOne_to_fragmentTwo"
+            app:destination="@id/fragmentTwo"
+            app:enterAnim="@anim/from_left"
+            app:exitAnim="@anim/to_right"
+            app:popEnterAnim="@anim/from_right"
+            app:popExitAnim="@anim/to_left" />
+        <action
+            android:id="@+id/action_fragmentOne_to_fragmentThree"
+            app:destination="@id/fragmentThree" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentTwo"
+        android:name="com.sheecodes.fragmentstransitionanimationsdemo.FragmentTwo"
+        android:label="Fragment Two"
+        tools:layout="@layout/fragment_two">
+        <action
+            android:id="@+id/action_fragmentTwo_to_fragmentOne"
+            app:destination="@id/fragmentOne"
+            app:enterAnim="@anim/from_right"
+            app:exitAnim="@anim/to_left" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentThree"
+        android:name="com.sheecodes.fragmentstransitionanimationsdemo.FragmentThree"
+        android:label="Big Picture Fragment"
+        tools:layout="@layout/fragment_three" />
+</navigation>
